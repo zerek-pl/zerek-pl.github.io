@@ -1,0 +1,81 @@
+.tekstgorny {
+	font-family: 'Impact', 'Tahoma', sans-serif;
+}
+
+.polegry {
+	font-family: 'Courier New', 'Tahoma', sans-serif;
+	border: 1px solid white;
+  margin-top: 120px;
+  margin-bottom: 30px;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.atak {
+  position: absolute;
+  right: 500px;
+  width: 60px;
+  border: 3px solid lightblue;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+.atak:hover {
+	transition-duration: 0.4s;
+	background-color: blue;
+	border: 3px solid blue;
+}
+
+.stats {
+  position: absolute;
+  right: 600px;
+  top: 375px;
+  width: 60px;
+  border: 3px solid lightblue;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+.stats:hover {
+	transition-duration: 0.4s;
+	background-color: blue;
+	border: 3px solid blue;
+}
+
+.potka {
+  position: absolute;
+  left: 600px;
+  top: 375px;
+  width: 60px;
+  border: 3px solid lightblue;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+.potka:hover {
+	transition-duration: 0.4s;
+	background-color: blue;
+	border: 3px solid blue;
+}
+
+.wesprzyj {
+  position: absolute;
+  width: 150px;
+  left: 880px;
+  top: 600px;
+  height: 40px;
+  border: 3px solid red;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-family: 'Impact', 'Tahoma', sans-serif;
+  font-size: 16;
+}
+
+.wesprzyj:hover {
+	transition-duration: 0.4s;
+	background-color: white;
+	border: 3px solid white;
+	color: red
+}
+

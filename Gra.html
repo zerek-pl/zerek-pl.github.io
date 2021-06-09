@@ -1,0 +1,80 @@
+
+<html> <!-- Zaprogramowane przez Zerek w Notepad++ i Notatniku. Grafika zrobiona w paint.net [ https://www.getpaint.net/ ] :) -->
+<head>
+<link href="Stylowanie.css" rel="stylesheet" type="text/css">
+</head>
+<body background="Pliki/tlo2.png" text="white">
+
+<h1 style="text-align:center;" class="tekstgorny"><big>Witaj w Atak Kosmosu!</big></h1>
+<h2 style="text-align:center;">Atak Kosmosu to gra przeglądarkowa zaprogramowana w 2021 roku przez Zerka w HTML5.</h2>
+<h2 style="text-align:center;">Gra używa stylu text-adventure, czyli zamiast grafik jest sam tekst. Korzystaj z przycisków by wykonać różne funkcję i pokonaj złego smoka Andromeda!</h2>
+<h1 style="text-align:center;" class="polegry", id="tekst"><big>Kliknij byle jaki przycisk by zacząć gre!</big></h1>
+<!-- <button class="atak" onclick="atakuj()">Atakuj</button> -->
+<button onclick="atak()" type="button" value="Atakuj" id="atak" class="atak">
+<img src="Pliki/miecz.png" alt="ikona atak" width=32 height=32 style="text-align:center;"></img>
+</button>
+<button onclick="stats()" type="image" value="Statystyki" id="stats" class="stats">
+<img src="Pliki/statystyki.png" alt="ikona statystyki" width=32 height=32 style="text-align:center;"></img>
+</button>
+<button onclick="potka()" type="button" value="Potka" id="potka" class="potka">
+<img src="Pliki/mikstura.png" alt="ikona atak" width=32 height=32 style="text-align:center;"></img>
+</button>
+<button onclick="parent.location='https://www.youtube.com/channel/UCp93OqQRLZJITtFURPKNO8Q?sub_confirmation=1'" type="button" value="Wesprzyj twórce!" id="wesprzyj" class="wesprzyj">Wesprzyj twórce!</button>
+
+<script> <!-- Skrypt gry! -->
+
+var zabity = false
+var pieniadze = 50
+var hp = 150
+var hpsmoka = 1000
+var potki = 3
+var miecz = true
+var mieczhp = 5
+var tekst = document.getElementById("tekst")
+
+function atak(a) {
+	if(zabity = false) {
+		return
+	} else if(miecz = false) {
+		alert("Nie masz miecza!")
+		return
+	} else if(hpsmoka<=1) {
+		return
+	} else if (mieczhp>=2) {
+	hpsmoka = hpsmoka - 20
+	mieczhp = mieczhp - 1
+	var pieniaszki = Math.ceil(Math.random() * 50)
+	var obrazenia = Math.ceil(Math.random() * 20)
+	pieniadze = pieniadze + pieniaszki
+	hp = hp - obrazenia
+		alert("Zaatakowałeś smoka za 20 HP! Teraz ma "+hpsmoka+"HP! Masz jeszcze "+mieczhp+ " użyć na mieczu! Dostałeś "+pieniaszki+" pieniędzy. Smok zadał ci "+obrazenia+" obrażeń.")
+	} else {
+		miecz = false
+		alert("Twój miecz się zniszczył w ataku!")
+	}
+}
+
+function potka(a) {
+	if(potki>=3) {
+	hp = hp + 50
+	potki = potki - 1
+	alert("Mikstura cię uleczyła o 50HP! Teraz masz "+hp+"HP! Masz jeszcze "+potki+" mikstury.")
+	} else if(potki==2) {
+	hp = hp + 50
+	potki = potki - 1
+	alert("Mikstura cię uleczyła o 50HP! Teraz masz "+hp+"HP! Masz jeszcze "+potki+" miksturę.")
+	} else if(potki==1) {
+	hp = hp + 50
+	potki = potki - 1
+	alert("Mikstura cię uleczyła o 50HP! Teraz masz "+hp+"HP! Już nie masz mikstur!")
+	} else {
+	alert("Nie masz już mikstur leczenia!")
+	}
+}
+
+function stats(a) {
+	alert("Życie: "+hp+"\n"+"Życie smoka: "+hpsmoka+"\n"+"Mikstury leczenia: "+potki+"\n"+"HP miecza: "+(mieczhp-1)+"\n"+"Pieniądze: "+pieniadze+".")
+}
+
+</script>
+</body>
